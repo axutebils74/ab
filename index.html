@@ -296,8 +296,8 @@ var kb = {};
                 vc = j2.checked;
                 keyb = j1.checked;
                 jsj = j5.checked
-                if (j4.checked && typeof process !== 'object' && typeof Proxy!=='undefined') {
-                    var require = new Proxy(function () { }, {
+                if (j4.checked && typeof process !== 'object' && typeof Proxy!=='undefined' && typeof window=='object') {
+                     window.require = new Proxy(function () { }, {
                         get: function () { return require; },
                         set: function () { return require; },
                         apply: function () { return require },
